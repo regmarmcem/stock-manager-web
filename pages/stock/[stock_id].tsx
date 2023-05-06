@@ -1,5 +1,6 @@
 import { Inter, Short_Stack } from 'next/font/google'
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,9 +24,11 @@ type StockPageProps = {
 
 export const getServerSideProps: GetServerSideProps<StockPageProps> = async (context) => {
   try {
+    const { stock_id } = context.query;
+
     const host = 'localhost:8080';
     const protocol = 'http';
-    const stock = await fetch(`${protocol}://${host}/stock/1`)
+    const stock = await fetch(`${protocol}://${host}/stock/${stock_id}`)
       .then(data => data.json());
         return {
           props: {
