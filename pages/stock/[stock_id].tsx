@@ -1,6 +1,5 @@
 import { Inter, Short_Stack } from 'next/font/google'
 import { GetServerSideProps } from 'next';
-import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
