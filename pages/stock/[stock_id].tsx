@@ -1,5 +1,6 @@
 import { Inter, Short_Stack } from 'next/font/google'
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,6 +9,9 @@ export const StockPage: React.FC<StockPageProps> = ({ stock }) => {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 bg-slate-50 ${inter.className}`}
     >
+      <Head>
+        <title>在庫管理システム</title>
+      </Head>
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <ul className="space-y-4">
           <li className="pt-6 md:p-4 flex items-center bg-gray-200 rounded-xl shadow">
