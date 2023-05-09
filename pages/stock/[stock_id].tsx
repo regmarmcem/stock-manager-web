@@ -5,10 +5,19 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const StockPage: React.FC<StockPageProps> = ({ stock }) => {
   return (
-    <div>
-      <h1>{stock.id}</h1>
-      <p>{stock.name}</p>
-    </div>
+    <main
+      className={`flex min-h-screen flex-col items-center justify-between p-24 bg-slate-50 ${inter.className}`}
+    >
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+        <ul className="space-y-4">
+          <li className="pt-6 md:p-4 flex items-center bg-gray-200 rounded-xl shadow">
+            <p className="text-lg font-medium">商品ID: {stock.id}
+            <br/>
+            商品名: {stock.name}</p>
+          </li>
+        </ul>
+      </div>
+    </main>
   );
 };
 
